@@ -59,3 +59,57 @@ Users into the Openshift Cluster
 # This configuration file can be changed via this location:
 /etc/openshift/master/master-config.yaml
 
+C:\minishift-1.33.0-windows-amd64>oc get users
+NAME         UID                                    FULL NAME   IDENTITIES
+developer    6d81a73c-1487-11ea-9040-0800279ba5b8               anypassword:developer
+developer2   ea518e70-149c-11ea-9040-0800279ba5b8               anypassword:developer2
+
+C:\minishift-1.33.0-windows-amd64>oc login -u system:admin
+Logged into "https://192.168.99.100:8443" as "system:admin" using existing credentials.
+
+You have access to the following projects and can switch between them with 'oc project <projectname>':
+
+    default
+    kube-dns
+    kube-proxy
+    kube-public
+    kube-system
+  * myproject
+    openshift
+    openshift-apiserver
+    openshift-controller-manager
+    openshift-core-operators
+    openshift-infra
+    openshift-node
+    openshift-service-cert-signer
+    openshift-web-console
+
+Using project "myproject".
+
+C:\minishift-1.33.0-windows-amd64>oc get projects
+NAME                            DISPLAY NAME   STATUS
+default                                        Active
+kube-dns                                       Active
+kube-proxy                                     Active
+kube-public                                    Active
+kube-system                                    Active
+myproject                       My Project     Active
+openshift                                      Active
+openshift-apiserver                            Active
+openshift-controller-manager                   Active
+openshift-core-operators                       Active
+openshift-infra                                Active
+openshift-node                                 Active
+openshift-service-cert-signer                  Active
+openshift-web-console                          Active
+
+C:\minishift-1.33.0-windows-amd64>oc get users
+NAME            UID                                    FULL NAME   IDENTITIES
+administrator   3deb971f-149e-11ea-9040-0800279ba5b8               anypassword:administrator
+developer       6d81a73c-1487-11ea-9040-0800279ba5b8               anypassword:developer
+developer2      ea518e70-149c-11ea-9040-0800279ba5b8               anypassword:developer2
+
+C:\minishift-1.33.0-windows-amd64>oc adm policy add-cluster-role-to-user cluster-admin administrator
+cluster role "cluster-admin" added: "administrator"
+# See "Added_cluster-admin_to_administrator.png"
+
