@@ -1,0 +1,44 @@
+## RHOS Commands and stuff
+oc whoami
+oc login -u developer -p {password}
+oc projects
+You have one project on this server: "My Project (myproject)".
+Using project "myproject" on server "https://192.168.99.100:8443".
+
+oc whoami -t
+C:\minishift-1.33.0-windows-amd64>curl -k https://192.168.99.100:8443/oapi/v1/projects -H "Authorization: Bearer {token from oc whoami -t}"
+{
+  "kind": "ProjectList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/oapi/v1/projects"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "myproject",
+        "selfLink": "/oapi/v1/projects/myproject",
+        "uid": "6db66c89-1487-11ea-912f-0800279ba5b8",
+        "resourceVersion": "2156",
+        "creationTimestamp": "2019-12-01T22:10:48Z",
+        "annotations": {
+          "openshift.io/description": "Initial developer project",
+          "openshift.io/display-name": "My Project",
+          "openshift.io/requester": "developer",
+          "openshift.io/sa.scc.mcs": "s0:c12,c4",
+          "openshift.io/sa.scc.supplemental-groups": "1000140000/10000",
+          "openshift.io/sa.scc.uid-range": "1000140000/10000"
+        }
+      },
+      "spec": {
+        "finalizers": [
+          "kubernetes"
+        ]
+      },
+      "status": {
+        "phase": "Active"
+      }
+    }
+  ]
+}
+
