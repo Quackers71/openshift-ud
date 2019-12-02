@@ -54,10 +54,9 @@ C:\minishift-1.33.0-windows-amd64>curl -k https://192.168.99.100:8443/oapi/v1/pr
 
 Openshift Master includes a built-in OAuth Server which is used to authrentication 
 Users into the Openshift Cluster
-    - Allow All
-    - Deny All < Identity provider
-# This configuration file can be changed via this location:
-/etc/openshift/master/master-config.yaml
+    - Allow All < default Identity Provider is set to this
+    - Deny All < if the Identity Provider is set then the this configuration file can be changed
+        /etc/openshift/master/master-config.yaml
 
 C:\minishift-1.33.0-windows-amd64>oc get users
 NAME         UID                                    FULL NAME   IDENTITIES
