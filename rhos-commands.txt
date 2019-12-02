@@ -42,3 +42,20 @@ C:\minishift-1.33.0-windows-amd64>curl -k https://192.168.99.100:8443/oapi/v1/pr
   ]
 }
 
+# There are three types of built-in users
+- Regular User
+    - developer
+- System User
+    - system:admin
+    - system:master
+- Service Accounts
+    - system:serviceaccount:proj1:db_user
+        i.e. this account could be used for the web server to access the database
+
+Openshift Master includes a built-in OAuth Server which is used to authrentication 
+Users into the Openshift Cluster
+    - Allow All
+    - Deny All < Identity provider
+# This configuration file can be changed via this location:
+/etc/openshift/master/master-config.yaml
+
